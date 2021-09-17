@@ -10,7 +10,7 @@
 
       <h2>{{a.name_album}}</h2>
             {{a.year_album}}
-      <a href="/band/{{band_id}}/album/{{ album_id }}">Треки</a>
+      <a href="{{ a.get_absolute_url }}">Треки</a>
 
 </li>
     {%endfor%}

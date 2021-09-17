@@ -24,16 +24,14 @@ def show_album(request, band_id):
     return render(request, 'band_info.html', context=context)
 
 
-def show_track(request, album_id, band_id):
+def show_track(request, album_id):
     """Список треков группы"""
-    bands = MusicBand.objects.filter(id=band_id)
     albums = Album.objects.filter(id=album_id)
     tracks = Track.objects.filter(album_id=album_id)
     context = {
         'tracks': tracks,
         'album_id': album_id,
         'albums': albums,
-        'bands':band_id,
     }
     return render(request, 'album_info.html', context=context)
 

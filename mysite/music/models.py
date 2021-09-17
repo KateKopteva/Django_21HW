@@ -9,11 +9,11 @@ class Album(models.Model):
     year_album = models.DateField(verbose_name='Год выпуска')
     band = models.ForeignKey('MusicBand', verbose_name='Группа', null=True, on_delete=models.SET_NULL)
 
-    # def __str__(self):
-    #     return self.name_album
-    #
-    # def get_absolute_url(self):
-    #     return reverse('album', kwargs={'album_id': self.pk})
+    def __str__(self):
+        return self.name_album
+
+    def get_absolute_url(self):
+        return reverse('album', kwargs={'album_id': self.pk})
 
 
 
@@ -35,11 +35,7 @@ class Track(models.Model):
     time = models.DurationField(verbose_name='Длительность трека')
     album = models.ForeignKey('Album', verbose_name='Альбом', null=True, on_delete=models.SET_NULL)
 
-    def __str__(self):
-        return self.name_track
 
-    def get_absolute_url(self):
-        return reverse('album', kwargs={'album_id': self.pk})
 
 
 
