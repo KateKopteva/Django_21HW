@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<h1>{{title}}</h1>
+<ul>
+<h1></h1>
+   {%for b in band%}
+  <li>
+
+      <h2>{{b.name}}</h2> <a href="{{ b.get_absolute_url }}"> Подробнее</a>
+
+</li>
+    {%endfor%}
+</ul>
+{% endblock%}

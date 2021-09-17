@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<h1>{{title}}</h1>
+<ul>
+    <h1>Треки альбома  {%for a in albums%} {{a.name_album}} {%endfor%} </h1>
+
+       {%for t in tracks%}
+  <li>
+
+      <h2>{{t.name_track}}</h2>
+            {{t.time}}
+
+
+</li>
+    {%endfor%}
+
+</ul>
+{% endblock%}

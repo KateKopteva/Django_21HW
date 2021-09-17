@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<h1>{{title}}</h1>
+<ul>
+    <h1>Альбомы группы  {%for b in bands%} {{b.name}} {%endfor%}</h1>
+
+       {%for a in albums%}
+  <li>
+
+      <h2>{{a.name_album}}</h2>
+            {{a.year_album}}
+      <a href="/band/{{band_id}}/album/{{ album_id }}">Треки</a>
+
+</li>
+    {%endfor%}
+
+</ul>
+{% endblock%}
